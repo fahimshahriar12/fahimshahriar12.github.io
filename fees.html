@@ -8,7 +8,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
     <link href="font/font.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/registration.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Remember to include jQuery :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/registration.css">
     <link rel="stylesheet" href="css/fees.css">
@@ -175,7 +183,67 @@
   </div>
 <br>
 
+<div id="ex1" class="modal" style="width:445px; padding:0px; margin:0px;border-radius:10px">
+  <div class="conatiner_full form_backgrund" style="box-shadow: 0 1px 1px rgba(0,0,0,0.08),
+              0 2px 2px rgba(0,0,0,0.12),
+              0 4px 4px rgba(0,0,0,0.16),
+              0 8px 8px rgba(0,0,0,0.20);width:445px; padding:0px; margin:0px; ">
+    <div class="container">
+      <form class="form" style="width:345px;background-color:#FFA926; border-radius:10px">
+            <h1  style="text-align:center;">Payment</h1>
+            <img style="width:345px;" src="img/241846_credit-card-png.png" alt="">
+            <div>
+              <input id="fn" type="text" name="" value="" placeholder="Card Holder Name">
+              <br>
+              <input id="ln" type="text" name="" value="" placeholder="Card Number">
+              <br>
+
+              <input id="ex" type="text" name="" value="" placeholder="Expire Date">
+              <input id="cvc" type="text" name="" value="" placeholder="CVC">
+
+              <br>
+              <button id="SubminButton" onclick="pay()" type="button" name="button" style="background-color:#003366;">Pay</button>
+            </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
 <script type="text/javascript">
+
+
+
+  function pay(){
+
+
+      if(document.getElementById('fn').value ==""){
+        document.getElementById('fn').style.backgroundColor='#FFBABA';
+        alert("All information  is required");
+      }
+      else if(document.getElementById('ln').value==""){
+        document.getElementById('ln').style.backgroundColor='#FFBABA';
+          alert("All information  is required");
+      }
+      else if(document.getElementById('cvc').value==""){
+        document.getElementById('cvc').style.backgroundColor='#FFBABA';
+          alert("All information  is required");
+      }
+      else if(document.getElementById('ex').value==""){
+        document.getElementById('ex').style.backgroundColor='#FFBABA';
+          alert("All information  is required");
+      }
+      else{
+        document.getElementById('SubminButton').innerHTML="Payment Successful";
+
+      }
+
+
+
+
+  }
+
 
 
   function calculateCost(){
@@ -223,7 +291,7 @@
 
 <div class="payment container">
   <small style="display:block;" >*Please click on the PAY NOW button to proceed to the payment.</small>
-  <a href="#ex1" rel="modal:open" ><img style="height:100px;" src="img/paypal-pay-now-button.png.png" alt=""> </a>
+  <a href="#ex1" rel="modal:open"><img style="height:100px;" src="img/paypal-pay-now-button.png.png" alt=""> </a>
 
 </div>
 

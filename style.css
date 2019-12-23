@@ -368,7 +368,9 @@ vertical-align: middle;
 }
 
 
-
+.speaks_details_button hover:a{
+  color: black;
+}
 
 
 
